@@ -1,0 +1,62 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EGI-Federation/cloud-info-provider:
+      branch: master
+      repo: https://github.com/EGI-Federation/cloud-info-provider.git
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.8
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/EGI-Federation/cloud-info-provider git:
+        commands:
+        - /usr/bin/env sh .sqa/script.sunny-maroon-kudu.sh
+        container: qc.acc_stealthy-lilac-sponge
+  QC.Doc:
+    repos:
+      github.com/EGI-Federation/cloud-info-provider find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.seedy-pink-uguisu.sh
+        container: qc.doc_whiny-cerulean-coyote
+      github.com/EGI-Federation/cloud-info-provider git:
+        commands:
+        - /usr/bin/env sh .sqa/script.slimy-indigo-forest.sh
+        container: qc.doc_stinky-crimson-monster
+      github.com/EGI-Federation/cloud-info-provider markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.breezy-gold-indri.sh
+        container: qc.doc_sleepy-violet-baboon
+  QC.Lic:
+    repos:
+      github.com/EGI-Federation/cloud-info-provider licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.thirsty-saffron-kingfisher.sh
+        container: qc.lic_stuffy-green-oriole
+  QC.Sec:
+    repos:
+      github.com/EGI-Federation/cloud-info-provider bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.homely-plum-wallaby.sh
+        container: qc.sec_pretty-red-serval
+  QC.Sty:
+    repos:
+      github.com/EGI-Federation/cloud-info-provider flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.lanky-buff-buffalo.sh
+        container: qc.sty_lousy-dandelion-russel
+      github.com/EGI-Federation/cloud-info-provider jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.cozy-tan-quail.sh
+        container: qc.sty_lousy-thistle-hare
+  QC.Ver:
+    repos:
+      github.com/EGI-Federation/cloud-info-provider get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.crabby-cinnabar-setter.sh
+        container: qc.ver_nippy-harlequin-bullfrog
+timeout: 5400
