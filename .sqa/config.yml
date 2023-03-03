@@ -1,62 +1,68 @@
 config:
   credentials: []
   project_repos:
-    github.com/EGI-Federation/cloud-info-provider:
-      branch: master
-      repo: https://github.com/EGI-Federation/cloud-info-provider.git
     github.com/EOSC-synergy/sqaaas-tooling:
       branch: release/1.7.8
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/enolfc/cloud-info-provider:
+      branch: badging
+      repo: https://github.com/enolfc/cloud-info-provider.git
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
   QC.Acc:
     repos:
-      github.com/EGI-Federation/cloud-info-provider git:
+      github.com/enolfc/cloud-info-provider git:
         commands:
-        - /usr/bin/env sh .sqa/script.sunny-maroon-kudu.sh
-        container: qc.acc_stealthy-lilac-sponge
+        - /usr/bin/env sh .sqa/script.woolly-xanthic-jackal.sh
+        container: qc.acc_bumpy-azure-lynx
   QC.Doc:
     repos:
-      github.com/EGI-Federation/cloud-info-provider find_doc_files.py:
+      github.com/enolfc/cloud-info-provider find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.seedy-pink-uguisu.sh
-        container: qc.doc_whiny-cerulean-coyote
-      github.com/EGI-Federation/cloud-info-provider git:
+        - /usr/bin/env sh .sqa/script.lovely-emerald-hound.sh
+        container: qc.doc_ugly-flax-squid
+      github.com/enolfc/cloud-info-provider git:
         commands:
-        - /usr/bin/env sh .sqa/script.slimy-indigo-forest.sh
-        container: qc.doc_stinky-crimson-monster
-      github.com/EGI-Federation/cloud-info-provider markdownlint:
+        - /usr/bin/env sh .sqa/script.goopy-blue-duck.sh
+        container: qc.doc_sunny-apricot-hyena
+      github.com/enolfc/cloud-info-provider markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.breezy-gold-indri.sh
-        container: qc.doc_sleepy-violet-baboon
+        - /usr/bin/env sh .sqa/script.zippy-firebrick-antelope.sh
+        container: qc.doc_smelly-tomato-moorhen
   QC.Lic:
     repos:
-      github.com/EGI-Federation/cloud-info-provider licensee:
+      github.com/enolfc/cloud-info-provider licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.thirsty-saffron-kingfisher.sh
-        container: qc.lic_stuffy-green-oriole
+        - /usr/bin/env sh .sqa/script.flimsy-buff-fox.sh
+        container: qc.lic_stuffy-ochre-kakapo
+  QC.Met:
+    repos:
+      github.com/enolfc/cloud-info-provider cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.messy-maroon-eagle.sh
+        container: qc.met_surly-red-wolfhound
   QC.Sec:
     repos:
-      github.com/EGI-Federation/cloud-info-provider bandit:
+      github.com/enolfc/cloud-info-provider bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.homely-plum-wallaby.sh
-        container: qc.sec_pretty-red-serval
+        - /usr/bin/env sh .sqa/script.clammy-burgundy-ocelot.sh
+        container: qc.sec_wheezy-denim-seahorse
   QC.Sty:
     repos:
-      github.com/EGI-Federation/cloud-info-provider flake8:
+      github.com/enolfc/cloud-info-provider flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.lanky-buff-buffalo.sh
-        container: qc.sty_lousy-dandelion-russel
-      github.com/EGI-Federation/cloud-info-provider jsonlint:
+        - /usr/bin/env sh .sqa/script.gamy-chestnut-mouse.sh
+        container: qc.sty_snippy-copper-newfoundland
+      github.com/enolfc/cloud-info-provider jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.cozy-tan-quail.sh
-        container: qc.sty_lousy-thistle-hare
+        - /usr/bin/env sh .sqa/script.sunny-sapphire-robin.sh
+        container: qc.sty_sickly-harlequin-toucan
   QC.Ver:
     repos:
-      github.com/EGI-Federation/cloud-info-provider get_git_tags.py:
+      github.com/enolfc/cloud-info-provider get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.crabby-cinnabar-setter.sh
-        container: qc.ver_nippy-harlequin-bullfrog
+        - /usr/bin/env sh .sqa/script.wimpy-seashell-wallaby.sh
+        container: qc.ver_sickly-cinnamon-heron
 timeout: 5400
