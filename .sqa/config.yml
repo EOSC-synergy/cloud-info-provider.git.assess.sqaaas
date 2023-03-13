@@ -1,68 +1,62 @@
 config:
   credentials: []
   project_repos:
+    github.com/EGI-Federation/cloud-info-provider:
+      branch: master
+      repo: https://github.com/EGI-Federation/cloud-info-provider.git
     github.com/EOSC-synergy/sqaaas-tooling:
       branch: release/1.7.8
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
-    github.com/enolfc/cloud-info-provider:
-      branch: badging
-      repo: https://github.com/enolfc/cloud-info-provider.git
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
   QC.Acc:
     repos:
-      github.com/enolfc/cloud-info-provider git:
+      github.com/EGI-Federation/cloud-info-provider git:
         commands:
-        - /usr/bin/env sh .sqa/script.woolly-xanthic-jackal.sh
-        container: qc.acc_bumpy-azure-lynx
+        - /usr/bin/env sh .sqa/script.goopy-buff-panda.sh
+        container: qc.acc_chummy-pink-kingfisher
   QC.Doc:
     repos:
-      github.com/enolfc/cloud-info-provider find_doc_files.py:
+      github.com/EGI-Federation/cloud-info-provider find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.lovely-emerald-hound.sh
-        container: qc.doc_ugly-flax-squid
-      github.com/enolfc/cloud-info-provider git:
+        - /usr/bin/env sh .sqa/script.pretty-coral-dalmatian.sh
+        container: qc.doc_shaggy-pear-orangutan
+      github.com/EGI-Federation/cloud-info-provider git:
         commands:
-        - /usr/bin/env sh .sqa/script.goopy-blue-duck.sh
-        container: qc.doc_sunny-apricot-hyena
-      github.com/enolfc/cloud-info-provider markdownlint:
+        - /usr/bin/env sh .sqa/script.tacky-maroon-earwig.sh
+        container: qc.doc_wheezy-silver-fowl
+      github.com/EGI-Federation/cloud-info-provider markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.zippy-firebrick-antelope.sh
-        container: qc.doc_smelly-tomato-moorhen
+        - /usr/bin/env sh .sqa/script.wheezy-olive-eel.sh
+        container: qc.doc_cloudy-ochre-bird
   QC.Lic:
     repos:
-      github.com/enolfc/cloud-info-provider licensee:
+      github.com/EGI-Federation/cloud-info-provider licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.flimsy-buff-fox.sh
-        container: qc.lic_stuffy-ochre-kakapo
-  QC.Met:
-    repos:
-      github.com/enolfc/cloud-info-provider cff-converter-python:
-        commands:
-        - /usr/bin/env sh .sqa/script.messy-maroon-eagle.sh
-        container: qc.met_surly-red-wolfhound
+        - /usr/bin/env sh .sqa/script.sleepy-wheat-bracke.sh
+        container: qc.lic_lumpy-xanthic-warthog
   QC.Sec:
     repos:
-      github.com/enolfc/cloud-info-provider bandit:
+      github.com/EGI-Federation/cloud-info-provider bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.clammy-burgundy-ocelot.sh
-        container: qc.sec_wheezy-denim-seahorse
+        - /usr/bin/env sh .sqa/script.wimpy-chocolate-fish.sh
+        container: qc.sec_wiggy-yellow-sloth
   QC.Sty:
     repos:
-      github.com/enolfc/cloud-info-provider flake8:
+      github.com/EGI-Federation/cloud-info-provider flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.gamy-chestnut-mouse.sh
-        container: qc.sty_snippy-copper-newfoundland
-      github.com/enolfc/cloud-info-provider jsonlint:
+        - /usr/bin/env sh .sqa/script.grumpy-ruby-uguisu.sh
+        container: qc.sty_bluesy-wisteria-raccoon
+      github.com/EGI-Federation/cloud-info-provider jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.sunny-sapphire-robin.sh
-        container: qc.sty_sickly-harlequin-toucan
+        - /usr/bin/env sh .sqa/script.whiny-firebrick-chin.sh
+        container: qc.sty_smelly-carmine-chin
   QC.Ver:
     repos:
-      github.com/enolfc/cloud-info-provider get_git_tags.py:
+      github.com/EGI-Federation/cloud-info-provider get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.wimpy-seashell-wallaby.sh
-        container: qc.ver_sickly-cinnamon-heron
+        - /usr/bin/env sh .sqa/script.blurry-rust-mongoose.sh
+        container: qc.ver_craggy-corn-quail
 timeout: 5400
